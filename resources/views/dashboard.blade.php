@@ -24,8 +24,7 @@
                 </div>
             </div>
             <div class="mt-8 text-gray-900">
-                <div class="p-4">
-                    @foreach ($posts as $post)
+                    @forelse ($posts as $post)
                         <div
                             class="flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mb-8">
                             <div class="p-5 flex-1">
@@ -51,11 +50,15 @@
                             </a>
                         </div>
 
-                    @endforeach
-
-                    {{ $posts->links() }}
-                </div>
+                    @empty
+                        <div>
+                            <p class="text-center text-gray-400 py-16">No posts found.</p>
+                        </div>
+                    @endforelse
             </div>
+
+            {{ $posts->links() }}
+
         </div>
     </div>
 </x-app-layout>
