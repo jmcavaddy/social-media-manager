@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+// Test
+
 class FollowerController extends Controller
 {
     public function followUnfollow(User $user)
